@@ -1,0 +1,93 @@
+Decorators:
+===========	
+		Decorators are a powerful and simple feature that allows to modify or extend the functionality 	of functions or methods without changing their actual code.
+		You can say Decorators as HOF (High-Order-Functions) 
+		
+		How to implement it...
+			--> Nesting of functions 
+					functions defined inside another function 
+			--> function call backs
+					function passed as arguments to another functions 
+					
+	Decorators taking arguments/ Passing arguments to decorator function 
+		In order to achieve this add another layer of nesting...
+		
+		
+	using classes we can provice decorator:
+	---------------------------------------
+		__call__()
+			--> In your class if the above mentioned method is provided then your class will act as a decorator, class decorator
+		
+Lambda function- 
+	Lambda functions are anonymous(without names) function. It is useful when you have an single line expression.
+	
+	Syntax:
+		lambda arguments: expression
+		map(func, iter):
+			map takes a function and an iterable object as arguments and returns a map object which is also an iterator		
+
+		reduce(func, iter)
+			reduce takes a function and an iterable object as arguments and returns a single value
+
+		filter(func, iter)
+			reduce takes a function and an iterable object as arguments and performs operation based on true condition and returns a new filter object which is an iterator
+			
+	Understanding lambda functions
+	
+	Using lambda functions with map(), reduce(), filter()
+
+Unit testing with pytest framework
+==================================
+
+Pytest Framework
+
+	pytest module is one of the most popular unit test module in python. Because it provides plenty of plug-ins to work with different modules 
+	
+	In General:	pytest ... Performs tests follow Arrange-Act-Assert Model
+	
+	1. Arrange :setup the conditions from testing 
+	2. Act: calling some functions or methods
+	3. Assert: Confirming whether the condition is true or false.
+	
+	Testing frameworks hooks into to your test assertions so they can provide information when an assertions fails.
+	
+Installing pytest:
+		pip install pytest
+
+Test Discovery
+		
+   How pytest discovers tests:
+		
+	pytest command on command line will search for files with names starting with test_ by default.
+	
+	if User does not provide file name with pytest command, pytest will run all files starting with test_XXXX.py 
+	
+	When runnig test pytest indicates the status of your tests.
+	  Status (.FE)
+		dot(.) means the test is passed
+		F means the test has failed 
+		E means error--> test raised an exception
+	
+	
+	
+	
+		
+	
+
+	Pytest Overview
+	Introduction to pytest
+	Installing pytest
+	Test Discovery
+	How pytest discovers tests
+	Naming conventions for tests		
+		
+		
+
+
+
+
+
+		
+					
+					
+					
