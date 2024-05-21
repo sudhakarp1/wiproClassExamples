@@ -1,0 +1,121 @@
+PCAT: Day 1:
+============
+	Sudhakar Palanivelu
+	what is a list?
+	===============
+		Its a built-in data structure supported in Python.
+		
+		how do we create a list?
+			myList = list()
+				or 
+			myList = []
+			
+			for var in range(0,100,5):
+				myList.append(var)
+
+	What is list comprehension?
+		It a simple way to create a new list from values in a colleciton that you have or iteration. It is basically a single line of code enclosed in square bracket.
+		
+	Syntax of list comprehension
+
+		newList = [expression for var in iterable  if cond == True]
+		
+		myList = [var * 2 for var in range(0,100,5) ]
+		
+		iterable: 
+			which is iterable or usable in iteration/loop 
+		
+		
+Problem #1:
+	create a list which contains any number having digit 0 within the range of 1-1000
+
+	[10, 20, 30, ... 90, 100,101, 102, .. 110, 120, ... 990 ]
+	
+	a=[fun(i) for i in range(1,1000) if "0" in str(i)]
+print(a)
+
+Problem #2:	
+	Create a list with (word,len) combo from a lenghty sentence:
+	
+	enter a sentence:
+		what ever i type is my input
+		
+	output:
+		[('what',4), ('ever',4), ('i',1) ...('input',5)]
+		
+Problem #3:
+	 using nested list comprehension find all numbers between 1-1000 that are divisible by numbers between 5-9
+	output:
+	 [[5, 10, 15, 20 ... 995], [6, 12, 18, ...]. [7,14, ... ], [8, 16, ...]. [9 , 18, ...]]
+
+Generators in Python:	 
+---------------------
+	[] --> list 
+	() --> tuple 
+	{} --> set or dictionary
+	
+	newList = (expression for var in iterable  if cond == True)
+	
+	What is a generator?
+		A generator object/function/class behaves like an iterator. This is one of the easiest ways to create an iterator
+		
+		When in a function a return statement is replaced with yield statement then the functions is called a generator function.
+		
+	Iterators:
+	==========
+		Iterators are methods that iterate/traverse through collections like lists, tuples, set, dict, generators. Basically using an iterator method , we can loop through an object and access individual elements/values stored.
+		
+		In Python an iterator object must implement two special/dunder methods __iter__() and __next__(), collectively calles the iterator protocol 
+		
+	There is a module in Python called itertools
+		Infinite Iterators
+			count
+			cycle 
+		Finite Iterators
+			product
+			permutations
+			accumulate
+			combinations 
+			
+	Decorators:
+	===========	
+		Decorators are a powerful and simple feature that allows to modify or extend the functionality 	of functions or methods without changing their actual code.
+		You can say Decorators as HOF (High-Order-Functions) 
+		
+		How to implement it...
+			--> Nesting of functions 
+					functions defined inside another function 
+			--> function call backs
+					function passed as arguments to another functions 
+Problem #4:
+-----------					
+	@header				
+	printer(mesg)				
+					
+	@footer				
+	printer(mesg)						
+					
+	@header		
+	@footer	
+	printer(mesg)				
+					
+Problem #5:
+-----------					
+	@left
+    cellData()	
+			
+	@right
+    cellData()	
+	
+	@thick
+    cellData()		
+===================================================
+	hello --> data
+	***********   hello **********
+	
+	<html>
+		<b>
+			hello 
+		</b>
+	</html>
+
