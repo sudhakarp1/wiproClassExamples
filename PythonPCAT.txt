@@ -1,0 +1,139 @@
+Contents:
+Comprehension, Iterators, Generator, Decorators , Lambda function
+	List Comprehensions
+	Creating lists using list comprehensions
+	Iterator and Generators
+	Understanding iterators and generators
+	Creating iterators and generators
+	Decorator
+		Understanding decorators
+		Creating and using decorators
+	Lambda function- map(), reduce() filter()
+	Understanding lambda functions
+	Using lambda functions with map(), reduce(), filter()
+Pytest Framework
+	Pytest Overview
+	Introduction to pytest
+	Installing pytest
+	Test Discovery
+	How pytest discovers tests
+	Naming conventions for tests
+	xUnit Style Setup and Teardown
+	Understanding setup and teardown in pytest
+	Test Fixtures
+	Creating and using fixtures
+	Conftest.py
+	Using conftest.py for shared setup and teardown
+	Parameterizing Tests
+	Running tests with different inputs
+	Assert Statements and Exceptions
+	Writing assert statements
+	Testing exceptions
+	Pytest Command Line Arguments
+	Running pytest from command line
+	Understanding common pytest flags
+	Customizing Tests with Command Line and Configuration Files
+	Customizing pytest using pytest.ini
+	Using command line arguments in tests
+	Handling Skips and Expected Failures
+	Skipping tests
+	Marking tests as expected to fail
+	Distributed and Parallel Tests
+	Running tests in parallel
+	Reporting Test Results and Tracking Test History
+	Understanding test reports
+	Tracking test history over time
+	Writing and Running Unit Tests
+	Writing unit tests for your code
+	Running unit tests using pytest
+	Writing Functional Tests
+	Writing functional tests for your code
+	Running functional tests using pytest
+Arrays in Python
+	Definition and characteristics
+	Implement Basic operations
+	Access
+	Insert
+	Delete
+	Update
+	Reverse
+	Slice
+	Sorting an Array - Brute Force Method
+	Searching an Array - Linear Search Method
+Strings and Char Arrays in Python
+	Basic Operations: Create Strings, Concetanate Strings, Reverse String, Extract parts of string
+	Pattern Searching Algorithms (Problem Type)
+	Naive Pattern Searching (Strategy: Brute Force)
+	KMP Algorithm (Strategy: Finite Automata)
+	Rabin-Karp Algorithm (Strategy: Hashing)
+	Boyer Moore Algorithm (Strategy: Heuristic)
+Bitwise Algorithms (Problem Type) 
+	Count set bits (Strategy: Bit Manipulation) 
+	Find the two non-repeating elements in an array of repeating elements (Strategy: Bit Manipulation) 
+	Swap Bits (Strategy: Bit Manipulation) 
+	Count total set bits in all numbers from 1 to n (Strategy: Bit Manipulation) 
+	Optimize the Bitwise AND of all subsets of an array (Strategy: Bit Manipulation)
+Understanding Algorithms in Python and Analysing Algorithms
+Algorithms Fundamentals
+	Algorithm Basics
+	Time and Space Complexities
+	Notations
+	Classification of Algorithm: Design Strategies vs Problem Types
+	Design Strategies
+	Brute Force Algorithms,
+	Divide and Conquer Algorithms,
+	Dynamic Programming Algorithms,
+	Greedy Algorithms,
+	Backtracking Algorithms,
+	Randomized Algorithms,
+	Recursive Algorithms,
+	Problem Types 
+	Search Algorithms
+	Sort Algorithms
+	Computational Algorithms
+	Collection Algorithms
+	Graph Algorithms
+	Dynamic Programming Algorithms
+	Greedy Algorithms
+	Pattern Searching Algorithms
+	Geometric Algorithms
+	Numerical Algorithms
+	Encryption Algorithms
+	Machine Learning Algorithms
+	Data Compression Algorithms
+	Parallel and Distributed Algorithms
+Selection of Data Structure and Algorithm to solve a problem
+Selecting an Algorithm Based on Data Structure
+	Existing Data Structures
+	 Efficiency Considerations
+	 Data Structure Characteristics
+Selecting a Data Structure Based on Algorithm
+	Problem Requirements
+	Algorithm Efficiency
+	Flexibility and Future Use
+	Balancing Both Perspectives
+	Assessing Requirements
+	Prototyping and Testing
+	Scalability and Maintainability
+Dynamic Programming Algorithms (Strategy)
+	Knapsack Problem (Problem Type: Optimization)
+	Longest Common Subsequence (Problem Type: Subsequence)
+	Optimal Binary Search Tree (Problem Type: Tree)
+	Longest Increasing Subsequence (Problem Type: Subsequence)
+Backtracking Algorithms (Strategy)
+	The Knight’s tour problem (Problem Type: Path Finding)
+	Rat in a Maze (Problem Type: Path Finding)
+	N Queen Problem (Problem Type: Arrangement)
+	Subset Sum (Problem Type: Subset)
+Database Connectivity
+	Performing CRUD operations
+	Using MySQL or No SQL Database in Python
+	Connecting to MySQL or NoSQL databases
+	Executing SQL queries from Python
+	Using SQLite3 Database in Python
+	Connecting to SQLite3 databases
+	Executing SQL queries from Python
+Data Format Handling
+	File Format Basics/Layout - JSON, XML, CSV, XLS
+	Understanding different file formats
+	Reading and writing JSON, XML, CSV, XLS files
