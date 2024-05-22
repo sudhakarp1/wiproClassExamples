@@ -1,0 +1,135 @@
+Day 3:
+=====
+
+Test Discovery(Conventions used by pytest)
+==========================================	
+	pytest  -->if no directory name or file name given
+	pytest dirname 
+	
+	How pytest discovers tests
+		pytest command start at your current working directory(CWD) and then traverses all sub directories.
+			it searches for files start with/prefix with test_*.py or *_test.py 
+			
+			Inside these file start or ending with test 
+				functions/methods starting with test 
+				class names starting with Test
+==================================================		what is xUnit?
+	Originally JUnit is a unit testing  framework.
+	Kent Beck 	wrote a unit testing framework in smalltalk language. 
+		Later this was adapted by java and called it as JUnit. 
+		Later we had CUnit, CPPUnit, XUnit(.net), unittest(python)
+
+	here in unittest module which is part of family of xUnit framework, they introduced some thing called fixture, setup and teardown methods 
+
+	These setup methods are called before starting your tests and teardown is called after the tests are completed. Like pre-condition and post-conditions for running your tests.
+	
+	in pytest module setting up these function is done using fixture decorator
+	
+	Summary of Fixtures:
+	--------------------
+		Test fixtures in pytest are functions that provide baseline for tests. They are used to setup pre-conditions for tests to run, and they can also provide teardown logic to clean up after the tests are finished running. So Fixtures are powerful feature of pytest to help in writing clean, modular and re-usable test code.
+		
+		Syntax:	Fixtures are declared using @pytest.fixture
+		Different scoping:
+			Function scope: 
+				This is the default scope. The fixture is invoked once per function 
+			Class Scope:	
+				this fixture is invoked once per class 
+			Module Scope:
+				This Fixture is invoked once per test module(Each Python file is a module)
+				
+Conftest.py
+	Using conftest.py for shared setup and teardown
+	
+	conftest.py is a special filename recognized by pytest. This allows you to define fixtures that can be shared among multiple test files within a directory and its sub-directories
+
+Parameterizing Tests:
+=====================	
+	Parameterized tests in pytest allows you to run the same test logic with multiple sets of input data. This is useful for testing different scenarios with different input values without duplicating the test code.
+
+	
+Assert Statements and Exceptions
+	Writing assert statements
+		assert True
+		assert False 
+		assert 10 + 20 == 30
+		assert x == 100
+		assert y > 100
+		
+		assert 30 in [10,30,40,50,60]
+		
+		assert 'h' in 'shizophremic'
+		
+		
+		In addition to these assert python provides some modules like assertpy 
+		
+			from assertpy import assert_that
+		
+			assert _that(5).is_equal_to(5)
+			assert_that('some string').is_not_empty()
+			
+		
+		with pytest.raises(ValueError):
+			fun()
+
+	Testing exceptions	
+	
+	TDD --> Test Driven Development
+	==============================
+		TDD is an iterative development process, where your write test cases before you write actual code.
+		
+		Let me give a simple example:
+		
+		What is the requirement:
+			1. I want to write a function to create directory
+			2. Write a function to create a file inside that directory 
+			
+============================================
+	Pytest Command Line Arguments
+		Running pytest from command line
+			pytest 
+				--> It will run all test files starting with test_*.py or *_test.py files in CWD and its sub-directories, this is default
+			pytest -s 
+				--capture=no 
+				
+			--> Show output
+				--> By default all output of test functions along with all called functions will be supressed 
+				--> Output will be show only when an error occurs/test Fails
+				-->
+		
+		Understanding common pytest flags
+		
+		Customizing Tests with Command Line and Configuration Files
+			--> there are 2 configuration files 
+			1. pytest.ini
+				[pytest]
+				addopts = 
+					
+			2. setup.cfg 
+				[tool:pytest]
+				addopts
+				
+		Customizing pytest using pytest.ini
+		Using command line arguments in tests
+
+
+===================>
+	path
+		--> In UNIX/Linux :
+				'./' +  'MyDirNew1'-->'./MyDirNew1'
+				
+		--> in Windows
+				'.\\' +  'MyDirNew1'-->'.\MyDirNew1'
+				
+			
+			
+			
+
+		
+		
+
+			
+	
+			
+			
+			
