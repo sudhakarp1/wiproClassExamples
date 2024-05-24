@@ -1,0 +1,135 @@
+Day 5:
+======
+  Algorithms Point of view:
+  ------------------------
+	Arrays in Python
+	================
+	Strings and Char Arrays in Python
+	Bitwise Algorithms (Problem Type)
+	Dynamic Programming Algorithms (Strategy)
+	Backtracking Algorithms (Strategy)
+  
+  In Addition to it :	
+	Database Connectivity
+	Data Format Handling
+	
+	Introduction to algorithms:
+	===========================
+	
+		Any problem solving can be achieved using 
+			1. sequential statements 
+			2. conditional statements
+			3. iterative/looping statements
+			
+		These 3 statements we try to group based on solving a problem and then isolate/put them in a function. Each function tries to solve part of the problem which we call it as sub-problem. merging or combining these sub-problem we tend to achieve solving the problem
+		
+		This approach of solving is called function oriented or procedure oriented programming
+			Here our focus is the steps involved in solving the problem.
+			
+		In Python we use lists as an alternative to arrays(compared to traditional programming languages).
+		
+		Remember we use lists/arrays for storing collection of data, We can perform operations on these data using functions
+		
+		Problem Solving :
+		-----------------
+			start with basics (Warming up)
+			
+			Arithmetic operators:
+			---------------------
+				+, -, / , //, *, **
+Problem#1				
+	1. 	accept date (dd,mm,yyyy) from user, using aritmetic operations	find day of the week as per the formula mentioned.
+	
+		a. Put the above logic into a function called dayOfWeek(dd,mm,yyyy)		
+		b. using the above function find the day of the first day in a given month and year. print caledar as shown in the demo.
+			
+Problem #2:
+	using list comprehension create a list of 10 elements where data is filled using randint 
+
+	Write the sort function give in algo ...
+	
+	call this sort function to verify by printing list before and after sorting.
+
+	def mySort(dataList):
+		for i in range(len(dataList)):
+			for j in range(i + 1, len(dataList)):
+				if dataList[i] > dataList[j]:
+					swap dataList[i], dataList[j]
+				
+
+	def mySearch(dataList, data):
+		pos = 0
+		while pos < len(dataList):
+			if dataList[pos] == data:
+				return pos 
+			pos+=1
+		
+		return -1	
+			
+Problem #3:
+-----------
+	This program is divided into 3 parts.
+	1. Have a list of 100 values where the first values is acception from the user. fill the remaining elements with consecutive values.
+	for example:
+		Enter a num: 101
+		101, 102, 103, 104 .... 199,200
+	2. Write a function called isPrime(num) and returns True or False based on whether the given numbers is a prime. Perform this operation. Check for each element in your array for prime, if the element is prime leave it as it is(no modification required), else assign 0 to the element
+		after perform the above step:
+		101 0 103 0 0 0 0 107 . . . . 199 0
+	3. 	Write a function countMaxZeroes(lst) ...return maximum count of consecutive zeroes between the numbers 
+		(13, 113, 127) --> 13 zeroes between 113 and 127 
+	
+	
+	matrix --> list of lists, creating lists inside another list.	
+	
+	accept row, col and first 
+	for example:
+		3 4 1
+		---> [[1, 2, 3, 4],
+			 [5, 6, 7, 8], 
+			 [9, 10, 11, 12]]
+			 
+	Add 3 functions ...
+		res = addMatrix(a, b)
+		res = subMatrix(a,b)
+		res = multMatrix(a,b)
+
+	len(a) --> row size 
+	len(a[0]) --> col size 
+		
+====================================================
+A = [
+    [1, 2], 
+    [1, 2, 3], 
+    [1, 2] 
+    ]
+	
+	#A[0][2] ==> IndexError 
+
+B = [
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3]
+    ]
+			
+			
+def validateMatrix(lst):
+	return True if matrix else Talse
+	
+			
+	3 X 5 --> 
+	a = [
+		[1,2,3,4,5],
+		[11,22,33,44,55],
+		[100,200,300,400,500] # 3 elements 
+		]
+======================================================
+Have you ever heard of magic matrix?...
+
+	if you have odd square matrix...
+		u can fill/store the elements in such a way that the sum of rows, columns and diagnal elements will be same.
+		
+		
+	I want you guys to explore it... 
+
+	validateMatrix(a)

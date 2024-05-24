@@ -1,0 +1,160 @@
+Day 4:
+-----
+	Using command line arguments in tests
+
+Problem #1:
+
+	Taking yesterday's createDir and createFile where tmpDir was given as fixture('./').
+		Modify the same where some directory name is passed as command line argument
+
+	    =====================================
+		Handling Skips and Expected Failures
+		Skipping tests
+		Marking tests as expected to fail
+		======================================
+	Handling Skips:
+	   how do you skip a test?
+			Some times, you want to skip certain tests under specific conditions
+
+			pytest module provides two decorators 
+				@pytest.mark.skip
+				@pytest.mark.skipif 
+					conditional skipping --> ignoring the test or jumping the test.
+						
+	Expected Failures:
+	------------------
+		There are situations where you expect the test to fail due of known issues or limitation, you want your pytest to treat these failures and expected failures. 
+			we use @pytest.mark.xfail decorator
+			
+	
+		Similar to conditional skipping we can conditionally mark the test as expected to fail 
+		
+		def testName():
+			assert False #test fails 
+	
+	
+		By using skips and xfails, you can effectively handle skips and expected failures in your pytest testing suite there by ensuring better management and reporting of test results.
+
+
+Next to be discussed:
+---------------------		
+======================================================	
+	Parallel Processing:
+	--------------------
+		In today's environment, where every machine/system has multiple core processors. If your product/app would like to make use of this facility.
+		
+		Simulary if you want your pytest to perfrom testing parallelly then you can install 
+			pytest-xdist 
+			or 
+			pytest-parallel
+		These are called plugins for your pytest. 
+			
+			pip install pytest-xdist
+			or 
+			pip install pytest-parallel
+		
+	after installing --> pytest-xdist
+		pytest -n 4  # for pytest-xdist
+				Run tests using 4 cpus in parallel
+				
+	after installing --> pytest-parallel
+		pytest --parallel=4  # for pytest-parallel
+	Run tests using 4 cpus in parallel
+	
+==================================================
+using taskset command:
+	bitmask values:			
+		0000 0000 0000 0001 --> 1 --> assing to cpu #0
+			--> 
+		0000 0000 0000 0010 --> 2 --> assing to cpu #1
+			--->
+		0000 0000 0000 0011 --> 3 --> assing to cpu #0 or #1	
+		
+	
+	
+	
+Distributed and Parallel Tests
+
+Running tests in parallel		
+	
+==================================================
+Test Reports:
+------------
+	Test results are captured or saved into files. pytest provides plugins to generate detailed reports, store test results and track changes ove time.
+	In order to do this two popular plugins
+		1. pytest-html
+			that generates html reports of the tests
+			
+			pytest --html=reportFile.html
+			
+		2. pytest-metadata 
+			 allows you to store and display metadata data of your tests , such as git commit info, test environment details and more..
+			 
+		
+1. Have list of name and mesg. 
+	Sort the list and its assocative messages in order based on choice given by user.
+		if choice it True
+			sort based on name 
+		else 
+			sort based on mesg 
+
+	validate your functions before sorting and after sorting by writing testcases using pytest.
+	
+
+Arrays in Python
+	Definition and characteristics
+	Implement Basic operations
+	Access
+	Insert
+	Delete
+	Update
+	Reverse
+	Slice
+	Sorting an Array - Brute Force Method
+	Searching an Array - Linear Search Method
+	
+	lists is an built-in type which works like array in Python
+		You can use this for data structures
+	
+	or if you want to use arrays
+		there are modules like array, numpy which supports traditional array like C/C++/Java
+	
+Arrays in Python
+	Definition and characteristics
+
+	Implement Basic operations
+		Access  --> []
+		Insert--> insert at position
+		append--> add at the end 
+		Delete --> pop()--> position, remove() --> based on value --> del arr[0]
+		Update--> arr[pos] = newValue
+		Reverse --> reverse()
+		Slice --> [::] --> 
+	
+	Sorting an Array - Brute Force Method
+
+	def mySort(dataList):
+		for i in range(len(dataList)):
+			for j in range(i + 1, len(dataList)):
+				if dataList[i] > dataList[j]:
+					swap dataList[i], dataList[j]
+				
+						
+	def mySearch(dataList, data):
+		pos = 0
+		while pos < len(dataList):
+			if dataList[pos] == data:
+				return pos 
+			pos+=1
+		
+		return -1
+		
+	Searching an Array - Linear Search Method		
+		
+
+
+
+
+
+		
+	
