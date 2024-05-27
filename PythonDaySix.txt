@@ -1,0 +1,95 @@
+Day 6:
+------
+		Matrix:
+		-------
+			magic matrix
+					(-1,5) # Index out of bounds
+				 (0,4)	
+			 (1,3)
+		(2,2)
+		
+Strings and Char Arrays in Python
+	Basic Operations: Create Strings, Concetanate
+Now:
+	Strings Reverse
+		1. using reverse()
+		2. using slicing
+		3. using loop 
+
+Problem #
+
+	1.	Search for a substring in a string and print its indices (multiple index)
+	for example:
+				  0123456	
+		string = 'this is a sample. jist trying it'
+		substring='is'
+			2,5,19 --> 
+			
+			
+		a. using built in methods, re, find, startswith 
+		b. using loop, without any bul
+			in methods just like array of characters...
+			
+=================================================		def mySpillter(string, delim=' ')
+	pass 
+	
+myStr = 'this is a sample. jist trying it'
+myList = mySpillter(myStr)	
+1. using built-in methods
+2. using loop, not using built-in methods
+
+			
+	string.split(',')
+	
+	
+Pattern matching:
+-----------------
+	dealing with words and strings 
+		Searching for words based on some critirea... This concept was introduced in 50-60s. there are plenty of libraries dealing or supporting this 
+		
+	In Python we have a module called re 
+		refers to regular expression
+			is* --> zero or more preceding characters
+					i
+					is 
+					iss
+					issssssssssssssssssssss
+					
+	We are not going to deal with regular expression here but we will discuss one 3 algorithms related to pattern matching...
+
+	
+		searching for a word/pattern in a sentence/text 
+		
+	KMP Algorithm (Strategy: Finite Automata)	
+	-----------------------------------------
+		KMP--> Knuth Morris Pratt
+		
+		lps table --> Longest proper prefix which is also suffix 
+
+	The naive pattern matching/searching algorithm does not work well in casses where we see main matching characters followed by mismatching characters.
+	
+	text = 'thisssssssssssss isisisis a ' pat = 'is'
+	
+	text = 'AAAAAAAAAAAAAAAAAABBBB' pat = 'AAB'
+	
+	This KMP uses degenerating property (i.e., a pattern having same sub-patterns appearing more than once in the pattern) of a pattern and improves efficiency better.
+	
+		In a naive algorithm, we step one by one and then try to match the whole substring/pattern string 
+		
+	This is where KMP does optimization over naive algorithm. In this case because first 3 characters match we just compare only the fourth A pattern.i.e because we know first 3 characters matching so there is not point in cheching so we skip first 3 characters.
+
+	The question is, how do we know how many characters to skip. Here we do perform before pattern macthing i.e., (pre-process) we create an integer array called lps[] which tellsus the count of characters to be skipped.
+	
+		
+	Next:		
+		String Extract parts of string
+		
+	
+	Pattern Searching Algorithms (Problem Type)
+		Naive Pattern Searching (Strategy: Brute Force)
+		KMP Algorithm (Strategy: Finite Automata)
+		Rabin-Karp Algorithm (Strategy: Hashing)
+		Boyer Moore Algorithm (Strategy: Heuristic)
+		
+	
+	
