@@ -1,0 +1,167 @@
+KMP Algorithm (Strategy: Finite Automata)	
+	-----------------------------------------
+		KMP--> Knuth Morris Pratt
+		
+		lps table --> Longest proper prefix which is also suffix 
+
+	The naive pattern matching/searching algorithm does not work well in casses where we see main matching characters followed by mismatching characters.
+	
+	text = 'thisssssssssssss isisisis a ' pat = 'is'
+	
+	text = 'AAAAAAAAAAAAAAAAAABBBB' pat = 'AAB'
+	
+	This KMP uses degenerating property (i.e., a pattern having same sub-patterns appearing more than once in the pattern) of a pattern and improves efficiency better.
+	
+		In a naive algorithm, we step one by one and then try to match the whole substring/pattern string 
+		
+	This is where KMP does optimization over naive algorithm. In this case because first 3 characters match we just compare only the fourth A pattern.i.e because we know first 3 characters matching so there is not point in cheching so we skip first 3 characters.
+
+	The question is, how do we know how many characters to skip. Here we do perform before pattern macthing i.e., (pre-process) we create an integer array called lps[] which tellsus the count of characters to be skipped.
+	
+	
+	
+	xyz --> [0,0,0]
+	aab --> [0,1,0]
+	*.py --> a.py, b.py, aa.py, ab.py  --> 
+	
+	ca*.c --> caa.c cab.c cat.c caaaa.c caaab.c 
+	ab* --> any file named starting with ca  
+	
+	ls *.c 
+	dir	*.py
+	
+	some suffix --> words ending with 
+	some prefix ==> words starting with 
+================================================
+	abcd --> 
+	AAAb ---> words we are searching for is called pattern
+	aaab
+	aaac
+	aac
+	aae
+	aaaac
+
+=============================================
+Rabin-Karp Algorithm (Strategy: Hashing)	
+====================================
+	What is hashing?
+		Hashing is a data structure technique that allows for efficient data storage and retreival. 
+		
+		It uses an converting a value/data into a fixed size value, called hash value using a function.
+			A function which takes a data and gives this fixed value is called hashing function. 
+			This hash value is then used to map the data to a specific location which is usually an array.
+			
+		Some times people call this hashing function as a black box taking a value/data and returning position in the table.
+
+	A   B   C  D   E  F  G  H 
+	65 66| 67  68 | 69 70 |71 72
+	
+	
+		1. Simple adding 
+		2. Multiplying 
+			
+		3. FOLD AND ADD:
+		
+			A   B   C  D   E  F  G  H 
+			65 66 | 67 68 | 69 70 |71 72
+				
+			6566 ---> key[0] * 100 + key[1]
+            6768 ---> key[2] * 100 + key[3]
+            6670 ---> key[4] * 100 + key[5]			
+			7172 ---> key[6] * 100 + key[7]
+	-------------------------------------------
+
+Hashing functions:
+------------------
+	When you do look at hashing functions, a good hashing function spreads out records evenly in your table/array(i.e., it gives unique hash value every time a different key is given)
+	
+	Synonyms:
+		If two or more keys generate the same hash value then such keys are referred to as synonyms
+		
+		Collision:
+		----------
+			if synonyms are there obviously there will problems while inserting (multiple) values in
+			the same position. 
+
+			This is called collision.
+
+		Collision Resolution:
+		---------------------
+			Even if an hashing algorithm is very good, it is likely that collisions will occur. Therefore any hashing program must include some method for dealing with keys/records that cannot fit into their address/index.
+			
+			Progressive overflow:
+				If collision occurs, here we check next address (addresses_ in sequence until an empty location/index/address is found.
+				
+				
+			Storing multiple keys/records per address 
+			=========================================
+				hashing('A') --> address 3
+					myList[3] = 'A'
+				hashing('C') --> address 3
+					myList[3].append('C')
+					
+					myList --> [x,x,x,['A','C'],x ]
+
+
+Another logic used:
+-------------------
+	prime = 101
+	primePower = prime ** (pattLen - 1)
+					
+	substrhash = (prime * (substrhash - ord(text[i]) * primePower) + ord(text[i+m])) % prime
+	
+Another logic:
+-------------
+   M = len(pat)
+    N = len(txt)
+    i = 0
+    j = 0
+    p = 0    # hash value for pattern
+    t = 0    # hash value for sub string txt
+    h = 1	
+	  # The value of h would be "pow(d, M-1)%q"
+    for i in range(M-1):
+        h = (h*d) % q
+	
+	t = (d*t + ord(txt[i])) % q
+===============================================
+	
+	Pattern Searching Algorithms (Problem Type)
+		Naive Pattern Searching (Strategy: Brute Force)
+		KMP Algorithm (Strategy: Finite Automata)
+		Rabin-Karp Algorithm (Strategy: Hashing)
+		Boyer Moore Algorithm (Strategy: Heuristic)
+		
+Boyer Moore Algorithm (Strategy: Heuristic):
+-------------------------------------------
+	This algorithm is just like KMP algorithm. This is also another efficient string matching algorithm
+	
+	only difference is while scanning characters we will scanning from left to right, by matching of pattern is done from right to left.
+	
+	Similar KMP, here we create a table called bad character table 
+	Bad Character Table:
+	--------------------
+		this table stores the righmost occurrence of each character in the pattern. If a mismatch occurs at position (i) it checks this table to find maximum shift distance/positions
+
+	Like KMP:
+	---------
+		Like KMP we do searching in 2 steps .
+			1. build the Bad Character Table (BCT)
+			2. Starch matching pattern the text from right to left. 
+				if a mismatch occurs
+					use the BCT to find the maximum shift position based on the character mismatch
+					
+					
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
