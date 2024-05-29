@@ -1,0 +1,349 @@
+Day 8:
+------
+
+Boyer Moore Algorithm (Strategy: Heuristic):
+-------------------------------------------
+	This algorithm is just like KMP algorithm. This is also another efficient string matching algorithm
+	
+	only difference is while scanning characters we will scanning from left to right, by matching of pattern is done from right to left.
+	
+	Similar KMP, here we create a table called bad character table 
+	Bad Character Table:
+	--------------------
+		this table stores the righmost occurrence of each character in the pattern. If a mismatch occurs at position (i) it checks this table to find maximum shift distance/positions
+
+	Like KMP:
+	---------
+		Like KMP we do searching in 2 steps .
+			1. build the Bad Character Table (BCT)
+			2. Starch matching pattern the text from right to left. 
+				if a mismatch occurs
+					use the BCT to find the maximum shift position based on the character mismatch
+	
+	Did you learn bitwise operator?
+		Operators that perform operations at bit level on the operands that are passed
+		
+	What are they?
+		& --> bitwise and ,
+		| --> bitwise or ,
+		^ --> bitwise XOR,
+		~ --> bitwise complement (1's complement),
+		>> --> bitwise right shift ,
+		<< --> bitwise left shift
+		
+		Number are represented in bits and stored internally in your memory.
+unsigned Bitwise	signed			
+	0		000		0
+	1		001		1
+	2		010		2
+	3		011		3
+-------------------------		
+	4		100		-4
+	5		101		-3
+	6		110		-2
+	7		111		-1
+	
+	Negative numbers are represented as 2's complement
+	
+	if num is 3
+		011 --> bitwise representation
+		
+		100 --> one's complement
+		 +1 -->
+		----
+		101  --> -3
+		----
+	x = y + 10
+
+	y --> y = x - 10	-->
+		
+	2'cpt = 1's cpt + 1  
+	ie. 
+		1's cpt = 2's cpt - 1
+		
+		10 --> -10 - 1 ==> -11
+	
+	10  & 8 --> 8
+	
+		1010 --> 10
+		1000 --> 8
+		----------
+		1010 --> 10
+		
+	10 | 7 ==> 15
+	===================================
+	<< 
+	
+	1 << 2 
+		--> 0001  << 2
+		
+		--> 0100 --> 4
+	10 << 2
+		---> 1010 << 2
+		---> 101000  --> 40
+		
+	>> 
+		8 >> 2 --> 1000 >> 2
+				0010 --> 2 ans
+	
+		40 >> 2
+		101000 >> 2-->  1010 --> 10
+		
+		
+	Count set bits (Strategy: Bit Manipulation) :
+Problem #1:
+	Write a program which takes a number and counts the number of set(1's) bits.
+	
+Input:
+	enter a num: 10
+output:
+	Number of set bits in 10 is 2
+	
+	1010
+	0001
+	-----
+	0000
+	====
+	
+		101 & 
+		001
+		----
+		001
+		
+		0010
+		0001
+		-----
+		0000
+		-----
+		
+		0001
+		0001
+		----
+		0001
+		
+		0001 >> 1
+		
+	
+	
+		var = 10
+		print (var) --> 10
+		var >>=  1 --> 1010 >> 1 --> 101
+		print (var) --> 5
+		var >>=  1 --> 101 >> 1 --> 10
+		print (var) --> 2
+		var >>=  1 --> 10 >> 1 --> 1
+		print (var) --> 1
+
+Question #2:
+	
+	Find the two non-repeating elements in an array of repeating elements (Strategy: Bit Manipulation) 	
+		
+		[10,10,10,10,2,2,4,5,4,10,2,3]
+		
+		
+	Two ways to achieve it:
+		problem method #1:
+		--> 5, 3 --> one way --> {10:5, 2:3,4:2, 5:1,3:1}
+		problem method #2:
+		--> 10,2 --> one way--> [10,2,4,5,3]
+
+
+
+		
+		
+		10 & 8 --> 10
+		
+		if 10 & 8 == 10
+		
+		
+		x & y == x 
+	
+Question #3:
+	Swap Bits (Strategy: Bit Manipulation) 
+	if num --> 10 ,1,2 --> 1 01 0 --> 1100-->
+	swapBitPos(num, firstPos, secondPos)
+	
+Question #4:
+	Count total set bits in all numbers from 1 to n (Strategy: Bit Manipulation) 	
+		10 --> 
+		
+		1 --> 1
+		2 --> 1
+		3 --> 2
+		.
+		.
+		.
+		10 --> 2
+		    =====
+				
+					
+Bitwise Algorithms (Problem Type) 
+	1. Count set bits (Strategy: Bit Manipulation) 
+	2. Find the two non-repeating elements in an array of repeating elements (Strategy: Bit Manipulation) 
+
+	3. Swap Bits (Strategy: Bit Manipulation) 
+
+	4. Count total set bits in all numbers from 1 to n (Strategy: Bit Manipulation) 
+	
+	5. Optimize the Bitwise AND of all subsets of an array (Strategy: Bit Manipulation)
+	
+
+	[5,6,8] 
+		--> [], [5], [6], [8], [5,6], [5,8] , [6,8], [5,6,8]
+		
+		[] --> 0 
+		[5] --> 5
+		[6] --> 6
+		[8] ==> 8
+		[5,6] ==> 4
+		[5,8] --> 0
+		[6,8] --> 0
+		[5,6,8] --> 0
+		--> 0 & 5 & 6 & 8 & 4 & 0 & 0 & 0  -->
+		final result: 0
+	===========================================
+Analysis of Algorithm:
+----------------------
+	Algorithm Basics:
+		what is time space complexity?
+		Different notations used
+	
+	what is algorithm?
+		An algorithm is a procedure/step by step of insturctions  for performing a task. This is not related to any programming language.
+		
+		This is specified in normal english.
+		
+		As I keep telling you guys.
+			that any type of problem can be solved using 
+			3 statements 
+				1. sequential 
+				2. conditional
+				3. iterative 
+				
+		We use some programming language to write code to validate these algorithm.
+
+
+		How do you analyze an algorithm?
+			we take the number of steps involved in the algorithm. Whether this depends on the input value/size of data 
+			
+			
+	for example:
+
+	def add(num1, num2):
+		res = num1  + num2  # 1 cpu time 
+		return res  # 1 cpu time 
+				
+	---> 2 cpu time ... ---> O(1)--> constant time 
+	
+	
+	def accumulate(arr):
+		res = 0 # 1 cpu time 
+		for i in range(len(arr)): #len my array 
+			res += i # len of my array
+		return res # 1 cpu time 
+		
+	--> n --> number of elements in my array 
+		2n + 2 --> 
+		if n is large --> we can ignore the constants and co-efficients in the equation 
+		
+		O(n) --> Linear time 
+		
+	def binSearch(n):
+		#statements here 
+		#
+		cnt = n 
+		while cnt > 0:
+			print(f'{cnt}', end = ' ')
+			cnt //=3
+		
+	O(log n)--> logarithamic time
+
+
+	def testOne(n):	
+		for i in range(n): #n 
+			for j in range(n): # log n 
+				pass
+		
+		
+	O(n^2) --> 		Quadratic time  	
+	O(2^n)  --> Exponential time 
+	
+	O(n!) --> Factorial time 
+====================================================
+	Data structures:
+		Because our algorithm will work base on the steps we give it.
+		Where we can control is the data given to these algorithms
+======================================================	
+	Notations:
+		--> When your searching ...
+		--> min(arr)--> 
+		--> max(arr)-->
+				--> min --> heap 
+		==========================
+		every time i perform if its best case scenario...
+			--> Big Omega
+			--> we talk about the below(lower bound) running time 
+		Average Case Scenario
+			--> Big Theta 
+				between the range of above(upper bound) and below (lower bound ) of running time of an algorithm
+		Worst case Scenario
+			--> Big Oh 
+			--> we talk about the above (upper bound) running time 
+		
+		These notations are referred to as 
+			asymptotic notations from algorithm analysis point of view.
+			
+Design Strategies:
+------------------
+	Design stratergy is a methodology used to develop efficient and effective algorithms to solve specific problems.
+	
+	These Design Strategy helps algorithm designers handle various types of problems by providing a structured framework for problem alalysis, solution devlopment and optimization.
+	
+	Some of these methodology include 
+		1. Brute force:
+				Involves trying all possible solutions and selecting one of the best that satisfies the problem criteria. 
+				While these stratergies are simple, they may not be effiecient in large problems sizes due to their time complexities.
+		2. Divide and Conquer:
+				This stratergy involves breaking down a problem into smaller sub-problems. solving each sub-problems recursively then combining the solutions of these sub-problems to get the final solution. 
+				These algorithms are often used for problems that can be sub-divided into independent parts.
+		3. Greedy Approach:
+				Greedy algorithms make locally optimal choices at each step with the hope of finding a globally optimal solution. 
+				These algorithms are often used in optimization problems where the goal is to minimize/maximize a certain objective function.
+		
+		4. Dynamic Programming:
+				Dynamic Programming is a techique used to solve problems by breaking them into smaller overlapping sub-problems and solving each sub-problem once. The solutions are stored to avoid reduntant computations, leading to significant improvement in the performance
+		5. Backtracking:
+				Backtracking is a systematic way of search for solutions to combinatorial problems by exploring all possible candidates.  It involves recursively exploring potential solutions and ignoring those solution that do satisfy the problem statements/conditions
+		
+
+problem types:
+-------------
+	Collection Algorithms are also called data structure algorithms
+		sorting
+		searching 
+		graphs  BFS, DFS 
+
+For tomorrow:
+	Basics on recursion ...
+	Built-in data stuctures 	
+		list
+		tuple
+		string 
+		set 
+		dict 
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			
