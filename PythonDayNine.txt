@@ -1,0 +1,193 @@
+Day 9:
+------
+	We have been using functions ... 
+	How does this function flow works..
+	
+		1. fun() called  -->1
+		1. funOne() called -->2 
+		1. funTwo() called -->3
+		funThree called -->4
+		2. funTwo() called --> 3
+		2. funOne() called --> 2
+		2. fun() called -->1
+
+	1. print 1 to 10 using recursion
+	2. factorial of a given number
+	3. reversing a list using recursion
+	4. reversing a given number using recursion
+	5. Tower of hanoi 
+	
+	display the contents of my directory recursively
+	
+	Types of Recursion:
+	-------------------
+		Depends on calling -->
+			directly calling --> direct recursion	
+				same function calling itself 
+			indirect recursion
+				fun() --> funOne() --> fun()
+				
+		Based on number of recursive calls 
+			1. linear --> calling once time
+			2. binary --> calling twice 
+			3. multiple --> calling multiple times
+	
+	--> recur(num)
+			recur(num+1)
+			
+	--> fibo(num)
+			fibo(num-1) + fibo(num-2)
+			
+	---> listFiles(path)#./
+			for filename in os.listdir(path)
+				listFiles(filename)
+				
+	[10,23,14,25,33]	--> 5 --> 0 --> 5
+	--->	
+	[10,23,14]  --> 5 --> 0 --> 2
+	
+	[10,23] --> 5 --> 0 --> 1 --> 10 + 14
+		
+		
+	[14] --> 5 --> 1 --> 2
+	
+	--> [25,33] 
+		
+
+Dynamic Programming Algorithms (Strategy)
+	Knapsack Problem (Problem Type: Optimization)
+	Longest Common Subsequence (Problem Type: Subsequence)
+	Optimal Binary Search Tree (Problem Type: Tree)
+	Longest Increasing Subsequence (Problem Type: Subsequence)
+
+Dynamic Programming:
+	Dynamic Programming is a techique used to solve problems by breaking them into smaller overlapping sub-problems and solving each sub-problem once.
+
+	The solutions are stored to avoid reduntant computations, leading to significant improvement in the performance
+	
+	One important point is each one will create a table(list of lists) for storing results...
+		
+	Knapsack Problem (Problem Type: Optimization):
+	==============================================
+		also known as 0/1 Knapsack problem. This problem is a classic optimization problem where you have a set of items with a weight and a value, and the all you want to do is to determine the combination of items to include in a knapsack(bag) so that  the total weight does not exceed the given limit and the total value is maximized.
+		
+		Here 0/1 represents that you either take an item(1) or leave it(0). 
+		
+		
+		weights =>  
+		values => 
+		capacity -->
+		
+		maximum value , what are the selected items 
+		
+		We do it in 2 stages. 
+			1. we create a table for storing the possibilities
+			2. based on this table we select the items 
+			
+		
+	When creating a table:
+		The maximum value obtained  for 'N' items is the max of the following two values.
+		
+	case 1: (1) item is picked 	
+		value of Nth item + max(value (N-1), weight)
+	Case 2:	(0) item is not picked 	
+		maximum value obtained by N-1 items and W (weight)
+	
+		if weight of Nth item is greater than W, then Nth item cannot be included (i.e., apply Case 2)
+		
+		if No items are picked up --> you knapsack is empty, there is no profit
+		
+	For filling the first item, we follow the above two case procedure 
+	
+		
+	Knapsack Problem:
+	==================
+		You have a bag which has certain capacity --> 6 
+		
+		There are N number items which can be put inside the bag, doing so will increase or go beyond capacity
+		
+		These Items, each having some weight and profit associated with it.
+		
+		The task is put the items into the bag such that the capacity is not exceeded and the sum of the profits with them is maximized
+		
+		Let (Input for my Problem)
+		==========================
+			weight = [ 1,2,3]
+			profit = [10,15,40]
+			Capacity ==> 6
+			
+	case 1: (1) item is picked 	
+		value of Nth item + max(value (N-1), weight)
+	Case 2:	(0) item is not picked 	
+		maximum value obtained by N-1 items and W (weight)
+	
+		if weight of Nth item is greater than W, then Nth item cannot be included (i.e., apply Case 2)
+		
+		if No items are picked up --> you knapsack is empty, there is no profit		
+		
+=====================================================
+Longest Common Subsequence:
+---------------------------		
+	the longest common sub-problem  is problem in dynamic programming that finds the longest sub-sequence that is present between 2 given strings sequence 
+
+ 	1. if 2 String are taken, let us assume them as sequence1 and sequence2
+	2. What is sub-sequence?
+		A sequence derived from another sequence by deleteing some character/elements without changing the order of the remaining 
+		example:
+			sequence--> abcde
+				sub-sequence --> abd 
+				sub-sequence --> ace 
+				sub-sequence --> bce
+				sub-sequence --> ade
+				sub-sequence --> bcd  				
+	3. What is the longest sub-sequence?
+		It is the goal of LCS to find the longest common subsequence that is present in sequence1 and sequence1
+		
+		sequence1 --> ABCDGH
+		sequence2 --> AEDFHR
+				LCS --> ADH with length of 3
+		Example 2:
+		
+		sequence1 --> ABCDEF
+		sequence1 --> ACBCF
+			LCS	--> ABCF --> 4
+				not ABC 
+					ACF 
+		
+		Dynamic Programming Solution:
+		-----------------------------
+			This problem can be efficiently solved using dynamic programming. The idea here is to build a table where each cell represents the length of LCS upto that point in the sequence.
+			
+			By filling this table iteratively you can find the length of the LCS and backtrack to reconstruct the LCS intself
+			
+			text comparision, Version Control systems 
+
+Solution:
+--------
+	1. Table :
+		create a table(2 D Array) to store the length of LCS upto each pair of characters in the given sequence
+		
+		Initially the table is filled with zeroes. the table is len(sequence1 + 1) * len(sequence2 + 1) 	
+		
+		How do we fill it. 
+			for each pair of characters(i, j), you check whether the character match.
+				if Match is true. Increment the cell value by 1 + the value in table in previous character (i-1,j-1)
+		
+				If characters dont match , we store the maximum of values for the previous character in sequence1(i-1, j) and sequence2(i, j-1)
+				
+	2. Backtrack:
+		Once you fill the table, you can backtrack through to reconstruct the LCS, starting from the bottom-right corner of the table.
+		
+		
+					
+				
+		
+			
+	
+	
+	
+	
+	
+	
+	
+	
