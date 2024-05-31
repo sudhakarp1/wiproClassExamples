@@ -1,0 +1,116 @@
+Day 10:
+------
+	Optimal Binary Search Tree
+	What is Binary Search Tree?
+		Any Binary Tree with the condition where left elements are less than key element and right elements are greater than the key element 
+		
+	OBST(Optimal Binary Search Tree) is a binary search tree that provides the minimum possible search time for a sequence of keys.  In an OBST, the keys are arranged in such a way that the expected search time is minimized. 
+
+	There are different approaches to solves
+	We use Dynamic programming to solve OBST problem.
+		1. We tend to define subproblems to break down the main problem into smaller more manageable parts. i.e., we define subproblems to determine the cose of search a particular range of keys 
+		
+		2, Repeat the process:
+			We iterate all possible root from index i and calculate the cost of left and right sub-trees 
+		3. tabulation:
+			We use 2D table to store the solutions to subproblems
+				
+		In the table (let us call it cost table) with a array of cost[n][n] --> to store the solutions of subproblems.
+		cost[0][n-1] --> last element in first row will hold the final result.
+		
+		How do we implement it.
+			1. All diagonal elements will be filled first.
+				cost[i][i] --> values 
+			2. then values will be filled in the line above diagonal elements	
+				cost[i][i+1]
+				cost[i][i+2]
+
+Longest Increasing Subsequence :
+-------------------------------
+    [1, 2, 2, 1, 3, 4,5, 3]
+	[1 2 2 1 3 4 5 3]
+	------------------------------
+	             4
+	[10,89,22,3,35,68,99,34] --> input value 
+		i -> 1 ---> len--> 1,2,3,4,5,6,7 
+			j - 0 - 1 -->
+		arr[i] --> 89
+		arr[j]	--> 10 	
+		i --> 2 
+		 j --> 0, 1
+			j == 0 
+				arr[2] , arr[0]
+				22 , 10
+			j = 1
+				22, 89
+		i = 3
+			j => 0, 1, 2
+			
+	increasing order --> 
+		lisTable ==>  [1, 2,2,1, 3,   
+		
+		
+		
+		
+	
+	
+	--> 10,22,35, 68,99
+	
+	--> 10, 89, 99
+	--> 3, 35,68,99
+	--> 3, 34
+	-->3, 35
+
+
+				
+=======================================================	Backtracking....
+================		
+	Backtracking is a problem solving technique used to find all solutions to a problem by trying out different  sequence of choice.  Its is useful for problems where the solution needs to satisfy some conditions
+
+	The basic idea of backtracking is to build solutions step by step (incrementally), exploring ach possible option at a decision point and discard those options whta do not satisfy the constraints. When a dead end is reached, the algorithm backtracks to the last valid dicision and explore other options 
+
+	This is general outline of how backtracking works:
+		1. Choose:
+			At each decision point, chose a candidate for next step 
+		2. explore:
+			try to choose next candidate by exploring further
+		3. Backtrack:
+			If the chosen candidate/option does not leand to a solution (or does not confirm to your conditions), undo the choice and try another candidate
+		4. Terminate:
+			Repeat steps 1-3 until all the possible solutions ar found or till the options are not available.
+			
+		Each backtracking is os implemented using recursion, where each recursive call represents a decision point in the search space.  The function stack (recursion stack) keeps track of the current path being explored
+		
+[ 
+	[ 1, 1, 1, 0],
+    [ 1, 0, 0, 0],
+    [ 1, 1, 0, 0],
+    [ 0, 1, 1, 1]
+] 
+
+The Knight’s tour problem:
+--------------------------
+
+
+N Queen Problem 
+================
+
+Subset Sum (Problem Type: Subset)
+--------------------------------
+	Taking an array as input value:
+		creating subset based on the condition.
+			condition is based on sum --> 
+			
+		[2,4,3,6,5,8] --> 10
+		
+		--> [2,3,5]
+		--> [2,8]
+		--> [4,6]
+		
+		This problem can be solved using backtracking as well as dynamic programming
+		
+		
+		
+		
+
+	
