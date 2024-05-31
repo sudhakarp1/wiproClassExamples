@@ -1,0 +1,36 @@
+Database Connection
+-------------------
+
+Mysql Database - WAMP Server  - Windows Apache Mysql and  PHP 
+Sqlite3 - Mock
+
+
+pymysql - driver to connect to Mysql
+
+oracle	- cx_oracle
+
+postgres - psycopg2
+
+sqlserver - pyodbc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

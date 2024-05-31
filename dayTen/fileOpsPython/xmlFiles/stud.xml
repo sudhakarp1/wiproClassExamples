@@ -1,0 +1,51 @@
+<collections>
+    <stud name="Jack">
+        <dob>02/05/2011</dob>
+        <class>Third D</class>
+        <gender>Male</gender>
+        <contact>3453453</contact>
+        <rettype>Home Going</rettype>
+    </stud>
+    <stud name="Jill">
+        <dob>12/09/2012</dob>
+        <class>Second A</class>
+        <gender>Female</gender>
+        <contact>4546342</contact>
+        <rettype>School Van</rettype>
+    </stud>
+    <stud name="Samuel">
+        <dob>29/01/2014</dob>
+        <class>LKG B</class>
+        <gender>Female</gender>
+        <contact>3453453</contact>
+        <rettype>Home Going</rettype>
+    </stud>
+    <stud name="Mary">
+        <dob>02/12/2010</dob>
+        <class>Fourth</class>
+        <gender>Female</gender>
+        <contact>3453453</contact>
+        <rettype>Home Going</rettype>
+    </stud>
+    <stud name="Mike">
+        <dob>02/05/2011</dob>
+        <class>Third D</class>
+        <gender>Female</gender>
+        <contact>3453453</contact>
+        <rettype>Home Going</rettype>
+    </stud>
+    <stud name="James">
+        <dob>02/05/2014</dob>
+        <class>LKG A</class>
+        <gender>MALE</gender>
+        <contact>6344253</contact>
+        <rettype>Pvt Van</rettype>
+    </stud>
+    <stud name="Ana">
+        <dob>02/05/2012</dob>
+        <class>Second E</class>
+        <gender>Female</gender>
+        <contact>9675674</contact>
+        <rettype>Pvt Van</rettype>
+    </stud>
+</collections>
